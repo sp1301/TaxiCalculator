@@ -1,0 +1,25 @@
+<div class="container">
+    <div>
+        <div>Date Of Ride:</div>
+        <custom-text-box name="dateTextBox" appDateValidator [Text]="userInput.RideDate" [Settings]="_DateTextBoxSettings" (submitEvent)="submittedDate($event)"></custom-text-box>
+    </div>
+    <div>
+        <div>Start Time of Ride:</div>
+        <custom-text-box name="timeTextBox" appTimeValidator [Text]="userInput.RideStartTime" [Settings]="_StartTimeTextBoxSettings" (submitEvent)="submittedStartTime($event)"></custom-text-box>
+    </div>
+    <div>
+        <div>Number of Miles Below 6 mph:</div>
+        <custom-text-box name="belowTextBox"  appNumberValidator [Text]="userInput.BelowSix"  [Settings]="_BelowTextBoxSettings" (submitEvent)="submittedBelow($event)"></custom-text-box>
+    </div>
+    <div>
+        <div>Number of Minutes Stationary or Above 6 mph:</div>
+        <custom-text-box name="aboveTextBox" appNumberValidator [Text]="userInput.OverSixOrStationary"  [Settings]="_AboveTextBoxSettings" (submitEvent)="submittedOver($event)"></custom-text-box>
+    </div>
+    <div>
+        <custom-button name="submitButton" [Settings]="_ButtonSettings" (click)="GetSum()"></custom-button>
+        <div>{{this.ErrorText}}</div>
+    </div>
+    <div>
+        <h1 name="resultCost" *ngIf="TotalCost != ''">Total Cost: ${{TotalCost}}</h1>
+    </div>
+</div>

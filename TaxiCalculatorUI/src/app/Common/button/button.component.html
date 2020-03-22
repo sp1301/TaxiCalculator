@@ -1,0 +1,10 @@
+<button class="button"
+[ngStyle]="{
+    'width': getSettings().getWidth(),
+    'height': getSettings().getHeight(),
+    'padding': getSettings().getAllPaddings(),
+    'font-size': getSettings().getFontSize(),
+    'background-color': getSettings().getColor(),
+    'color': getSettings().getTextColor()}"> 
+    {{getSettings().getText()}}
+</button>

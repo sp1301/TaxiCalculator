@@ -1,0 +1,15 @@
+<input class="text-box-style spacing"
+[(ngModel)]="_Text" 
+[ngStyle]="{
+    'width': getSettings().getWidth(),
+    'height': getSettings().getHeight(),
+    'padding': getSettings().getAllPaddings(),
+    'font-size': getSettings().getFontSize(),
+    'text-align': getSettings().getTextAlign(),
+    'background-color': getSettings().getBackgroundColor()}"
+placeholder="{{getSettings().getPlaceHolderText()}}"
+type="text"
+(focus)="onFocus()"
+(blur)="onBlur()"
+(change)="submitText()"
+>
